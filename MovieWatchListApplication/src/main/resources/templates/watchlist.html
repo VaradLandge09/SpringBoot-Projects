@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>WatchList Application</title>
+</head>
+<body style="font-family:'Times New Roman', Times, serif">
+
+    <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
+            <a class="navbar-brand" href="">MovieMemo</a>
+            <button class="navbar-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="watchlist">Movie List</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="watchlistItemForm">Add Movie</a>
+                    </li>
+                    
+                    <li class="nav-item">
+						<a class="nav-link" href="watchedmovies">Watched Movies</a>
+					</li>
+                </ul>
+            </div>
+
+        </nav>
+
+        <h2 class="mt-4">WatchList</h2>
+
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th class="text-left">Title</th>
+                    <th class="text-left">Rating</th>
+                    <th class="text-left">Priority</th>
+                    <th class="text-left">Comment</th>
+                    <th class="text-left"></th>
+                    <th class="text-left"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="movie: ${watchlistRows}">
+                    <td th:text="${movie.title}">Avatar</td>
+                    <td th:text="${movie.rating}">8.9</td>
+                    <td th:text="${movie.priority}">MED</td>
+                    <td th:text="${movie.comment}">must watch</td>
+                    <td><a href="#" class="btn btn-info" role="button" th:href="@{/watchedmovies(id=${movie.id})}">Mark Watched</a></td>
+                    <td><a href="#" class="btn btn-info" role="button" th:href="@{/watchlistItemForm(id=${movie.id})}">Update</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <div>
+            <div>Number Of movies to watch: <span th:text="${noOfMovies}"></span></div>
+        </div>
+        <br>
+         <p style="font-size: 17px; font-family:'Times New Roman', Times, serif">
+            Welcome to our movie watchlist platform, where you have full control over your movie collection. Within our user-friendly interface, you can effortlessly update movie details such as title, rating, priority, and comments to tailor your watchlist to your preferences. We've integrated an external API to enhance your experience - simply enter a movie's title, and our system will seamlessly search the Open Movie Database (OMDb) API to fetch and update its rating automatically. This ensures that you always have accurate and up-to-date information at your fingertips. Dive into your personalized movie collection with ease and efficiency, and let us take care of the details while you enjoy your cinematic journey.
+        </p>
+
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>WatchList Application</title>
+</head>
+<body style="font-family:'Times New Roman', Times, serif">
+
+    <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
+            <a class="navbar-brand" href="">MovieMemo</a>
+            <button class="navbar-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="watchlist">Movie List</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="watchlistItemForm">Add Movie</a>
+                    </li>
+                    
+                    <li class="nav-item">
+						<a class="nav-link active" href="watchedmovies">Watched Movies</a>
+					</li>
+                </ul>
+            </div>
+
+        </nav>
+
+        <h2 class="mt-4">Watched Movies</h2>
+
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th class="text-left">Title</th>
+                    <th class="text-left">Rating</th>
+                    <th class="text-left">Priority</th>
+                    <th class="text-left">Comment</th>
+                </tr>
+            </thead>
+            <tbody th:object="${updateMovie}">
+                <tr th:each="movieL: ${movieListRows}">
+                    <td th:text="${movieL.title}">Avatar</td>
+                    <td th:text="${movieL.rating}">8.9</td>
+                    <td th:text="${movieL.priority}">MED</td>
+                    <td th:text="${movieL.comment}">must watch</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <div>
+            <div>Number Of Watched movies: <span th:text="${noOfMovies}"></span></div>
+        </div>
+        <br>
+        <p>Welcome to your personalized movie haven! Here, you'll find a curated collection of all the movies you've watched. Delve into the realm of cinema as each entry reveals not just the movie title but also intricate details such as ratings, priority levels, and insightful comments. Dive deep into your cinematic journey with a glance, reliving the moments and memories tied to each film. Whether it's the thrill of a blockbuster or the charm of an indie gem, every movie comes alive with its unique story, and here, your watched movies take center stage, celebrated for their impact and significance in your cinematic repertoire.
+        </p>
+
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>

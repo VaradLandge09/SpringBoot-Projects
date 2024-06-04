@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>WatchList Application</title>
+</head>
+<body style="font-family:'Times New Roman', Times, serif">
+
+    <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-secondary">
+            <a class="navbar-brand" href="">MovieMemo</a>
+            <button class="navbar-toggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="watchlist">Movie List</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="watchlistItemForm">Add Movie</a>
+                    </li>
+                    
+                    <li class="nav-item">
+						<a class="nav-link" href="watchedmovies">Watched Movies</a>
+					</li>
+                </ul>
+            </div>
+
+        </nav>
+        <h2 class="mt-4">This is a WatchList Application! </h2>
+        <p style="font-size: 19px; font-family:'Times New Roman', Times, serif">
+            MovieMemo is an intuitive and efficient movie watchlist application built using cutting-edge technologies such as Spring Boot, Spring MVC, and Thymeleaf. With its sleek interface and robust functionality, FilmFlicks makes managing your movie watchlist a breeze.
+
+            <ul style="font-size: 17px; font-family:'Times New Roman', Times, serif">
+                <li><b>Add Movies to Your Watchlist</b>: Easily add movies to your watchlist with just a few clicks. Tailor your watchlist according to your preferences by adding ratings, priority levels, and comments for each movie. This allows you to prioritize your viewing list and keep track of your thoughts and impressions about each film. It contains external api (OMDB) which helps in getting the original rating for the movie.
+                </li>
+                <br>
+                <li><b>Mark Movies as Watched</b>: Once you've watched a movie, simply mark it as watched to keep your watchlist organized and up to date. This feature helps you stay on top of your movie-watching progress and prevents you from revisiting movies you've already seen.
+                </li>
+                <br>
+                <li><b>H2 Database Integration</b>: MovieMemo utilizes the H2 database to store and manage your watchlist data securely. The H2 database offers fast performance and scalability, ensuring a seamless user experience even as your watchlist grows.
+                </li>
+
+            </ul>
+        </p>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    
+</body>
+</html>
